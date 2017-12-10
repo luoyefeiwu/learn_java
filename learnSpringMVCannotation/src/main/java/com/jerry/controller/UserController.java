@@ -135,5 +135,15 @@ public class UserController {
 		System.out.println(user);
 		return user;
 	}
+	@RequestMapping("multiView")
+	public User multiView(){
+		User user=new  User();
+		user.setId(1);
+		user.setSex("男");
+		user.setUsername("张三");
+		user.setAddress("李四");
+		user.setBirthday(new Date());
+		return user;		
+	}
 
 }
