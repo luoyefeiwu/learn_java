@@ -16,13 +16,15 @@
 
 	<!-- 扫描 -->
 	<context:component-scan base-package="com.jerry"></context:component-scan>
+<!-- 默认会创建 注解的映射器和适配器 -->
+	<mvc:annotation-driven/>
 
-	<!-- 配置注解 处理器映射器 -->
+	<!-- 配置注解 处理器映射器 
 	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"></bean>
 
-	<!--配置注解 处理器适配器 -->
+	配置注解 处理器适配器 
 	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"></bean>
-
+-->
 	<!-- 配置试图解析器 ：解析出真正的物理试图 -->
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
