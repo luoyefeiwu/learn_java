@@ -14,11 +14,16 @@
 		http://www.springframework.org/schema/tx 
 		http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
 
-	<!-- 扫描 -->
 	<context:component-scan base-package="com.jerry"></context:component-scan>
+	
+	<!-- annotation-driven:默认创建了多个对象：RequestMappingHandlerMapping，RequestMappingHandlerAdapter
+		也就提供对json格式支持
+	 -->
 	<mvc:annotation-driven/>
-	<!-- 配置试图解析器 ：解析出真正的物理试图 -->
-	<bean id="viewResolver"
+	
+	
+	<!-- 配置sprigmvc视图解析器：解析逻辑试图 后台返回逻辑试图：index 视图解析器解析出真正物理视图：前缀+逻辑试图+后缀====/WEB-INF/jsps/index.jsp -->
+	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/jsps/"></property>
 		<property name="suffix" value=".jsp"></property>
