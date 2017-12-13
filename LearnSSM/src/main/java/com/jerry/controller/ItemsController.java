@@ -25,4 +25,12 @@ public class ItemsController {
 		model.addAttribute("itemsList", list);
 		return "itemsList";
 	}
+
+	@RequestMapping("edit")
+	public String edit(Integer id, Model model) {
+		Items items = itemsService.findByID(id);
+		model.addAttribute("item", items);
+		return "editItem";
+
+	}
 }
