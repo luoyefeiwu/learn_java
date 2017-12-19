@@ -52,8 +52,6 @@ public class CourseTypeAction extends ActionSupport implements ModelDriven<CrmCo
 		ActionContext.getContext().put("allCourseType", allCourseType);
 		return "findAll";
 	}
-<<<<<<< HEAD
-=======
 
 	/**
 	 * 显示编辑或者添加 jsp
@@ -77,6 +75,4 @@ public class CourseTypeAction extends ActionSupport implements ModelDriven<CrmCo
 		this.courseTypeService.addOrEdit(this.courseType);
 		return "addOrEdit";
 	}
-
->>>>>>> a6bfef3e427e6de9f3f78f034cdc6b10d1048686
 }
