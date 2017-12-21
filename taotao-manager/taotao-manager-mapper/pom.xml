@@ -6,14 +6,9 @@
 		<artifactId>taotao-manager</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>taotao-manager-dao</artifactId>
-	<!-- 添加依赖 -->
+	<artifactId>taotao-manager-mapper</artifactId>
+	<!-- 配置个性依赖 -->
 	<dependencies>
-		<dependency>
-		<groupId>com.taotao</groupId>
-		<artifactId>taotao-manager-pojo</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-		</dependency>
 		<!-- Mybatis -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
@@ -27,8 +22,12 @@
 			<groupId>com.github.miemiedev</groupId>
 			<artifactId>mybatis-paginator</artifactId>
 		</dependency>
-		<!-- MySql -->
 		<dependency>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper</artifactId>
+		</dependency>
+		<!-- MySql -->
+		<dependency> 
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
@@ -37,5 +36,24 @@
 			<groupId>com.alibaba</groupId>
 			<artifactId>druid</artifactId>
 		</dependency>
+		<!-- 依赖taotao-manager-pojo -->
+		<dependency>
+			<groupId>com.taotao</groupId>
+			<artifactId>taotao-manager-pojo</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
+	<!-- 如果不添加此节点mybatis的mapper.xml文件都会被漏掉。 -->
+	<build>
+		<resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+	</build>
 </project>
