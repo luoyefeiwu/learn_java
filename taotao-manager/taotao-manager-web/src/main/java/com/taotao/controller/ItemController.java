@@ -30,7 +30,6 @@ public class ItemController {
 	public EasyUIDataGridResult getItemList(Integer page, Integer rows) {
 		return itemService.getItemList(page, rows);
 	}
-
 	@RequestMapping(value="/save",method=RequestMethod.POST)
 	@ResponseBody
 	public TaotaoResult crateItem(TbItem item, String desc) {
