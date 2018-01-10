@@ -13,7 +13,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.taotao</groupId>
-			<artifactId>taotao-manager-dao</artifactId>
+			<artifactId>taotao-manager-mapper</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<!-- Spring -->
