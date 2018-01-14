@@ -2,6 +2,7 @@ package com.taotao.service.impl;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -73,5 +74,38 @@ public class ContentCatgoryServiceImpl implements ContentCatgoryService {
 		}
 		// 返回主键
 		return TaotaoResult.ok(id);
+	}
+
+	@Override
+	public TaotaoResult updateCatgory(Long id, String name) {
+		TbContentCategory contentCategory = contentCatgoryMapper.selectByPrimaryKey(id);
+		contentCategory.setName(name);
+		TbContentCategoryExample example = new TbContentCategoryExample();
+		Criteria criteria = example.createCriteria();
+		criteria.andIdEqualTo(id);
+		contentCatgoryMapper.updateByExample(contentCategory, example);
+		return TaotaoResult.ok();
+	}
+
+	@Override
+	public TaotaoResult deleteCatgory(Long parentid, Long id) {
+
+		TbContentCategory contentCategory = contentCatgoryMapper.selectByPrimaryKey(id);
+		if (contentCategory.getIsParent()) {
+			// 如果父节点 删除所有子节点
+			TbContentCategoryExample example = new TbContentCategoryExample();
+			Criteria criteria = example.createCriteria();
+			criteria.andParentIdEqualTo(id);
+			List<TbContentCategory> list = contentCatgoryMapper.selectByExample(example);
+			for (TbContentCategory tbContentCategory : list) {
+				if (tbContentCategory.getIsParent()) {
+					deleteCatgory(tbContentCategory.getParentId(), tbContentCategory.getId());
+				} else {
+					contentCatgoryMapper.deleteByPrimaryKey(tbContentCategory.getId());
+				}
+			}
+		}
+		contentCatgoryMapper.deleteByPrimaryKey(id);
+		return TaotaoResult.ok();
 	}
 }

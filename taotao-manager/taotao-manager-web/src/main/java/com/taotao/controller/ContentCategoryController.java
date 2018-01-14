@@ -31,10 +31,24 @@ public class ContentCategoryController {
 		List<EasyUITreeNode> list = contentCatgoryService.getContentCatList(parentId);
 		return list;
 	}
+
 	@RequestMapping("/create")
 	@ResponseBody
 	public TaotaoResult createNode(Long parentId, String name) {
 		TaotaoResult result = contentCatgoryService.insertCatgory(parentId, name);
+		return result;
+	}
+
+	@RequestMapping("/update")
+	@ResponseBody
+	public TaotaoResult updateNode(Long id, String name) {
+		TaotaoResult result = contentCatgoryService.updateCatgory(id, name);
+		return result;
+	}
+	@RequestMapping("/delete")
+	@ResponseBody
+	public TaotaoResult deleteNodes(Long parentid,Long id){
+		TaotaoResult result=contentCatgoryService.deleteCatgory(parentid, id);
 		return result;
 	}
 }
