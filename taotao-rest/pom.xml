@@ -47,6 +47,15 @@
 			<artifactId>jsp-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
+		<!-- Redis客户端 -->
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -57,7 +66,7 @@
 				<configuration>
 					<port>8081</port>
 					<path>/</path>
-				</configuration>				
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

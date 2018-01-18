@@ -9,5 +9,47 @@
 	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
 
 	<!-- 配置包扫描器 扫描 @Service 注解 -->
-	<context:component-scan base-package="com.taotao.rest.service"></context:component-scan>
+	<context:component-scan base-package="com.taotao.rest.service" />
+	<!-- 
+		 配置redis 客户端单机版
+	<bean id="jedisPool" class="redis.clients.jedis.JedisPool">
+		<constructor-arg name="host" value="192.168.3.7"/>
+		<constructor-arg name="port" value="6379"/>
+	</bean>
+	
+	<bean id="jedisClientSingle" class="com.taotao.rest.component.impl.JedisClientSingle" />
+	 -->
+	<!-- 配置 redis 集群版 -->
+	<bean id="JedisCluster" class="redis.clients.jedis.JedisCluster">
+		<constructor-arg>
+			<set>
+				<bean class="redis.clients.jedis.HostAndPort">
+					<constructor-arg name="host" value="192.168.3.7" />
+					<constructor-arg name="port" value="7001" />
+				</bean>
+				<bean class="redis.clients.jedis.HostAndPort">
+					<constructor-arg name="host" value="192.168.3.7" />
+					<constructor-arg name="port" value="7002" />
+				</bean>
+				<bean class="redis.clients.jedis.HostAndPort">
+					<constructor-arg name="host" value="192.168.3.7" />
+					<constructor-arg name="port" value="7003" />
+				</bean>
+				<bean class="redis.clients.jedis.HostAndPort">
+					<constructor-arg name="host" value="192.168.3.7" />
+					<constructor-arg name="port" value="7004" />
+				</bean>
+				<bean class="redis.clients.jedis.HostAndPort">
+					<constructor-arg name="host" value="192.168.3.7" />
+					<constructor-arg name="port" value="7005" />
+				</bean>
+				<bean class="redis.clients.jedis.HostAndPort">
+					<constructor-arg name="host" value="192.168.3.7" />
+					<constructor-arg name="port" value="7006" />
+				</bean>
+			</set>
+		</constructor-arg>
+	</bean>
+
+	<bean id="JedisClientCluster" class="com.taotao.rest.component.impl.JedisClientCluster" />
 </beans>
