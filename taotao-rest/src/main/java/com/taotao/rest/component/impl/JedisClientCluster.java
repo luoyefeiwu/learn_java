@@ -8,10 +8,11 @@ import redis.clients.jedis.JedisCluster;
 
 /**
  * 集群 版本
+ * 
  * @author Jerry
  *
  */
-public class JedisClientCluster implements JedisClient{
+public class JedisClientCluster implements JedisClient {
 	@Autowired
 	private JedisCluster jedisCluster;
 
@@ -53,6 +54,11 @@ public class JedisClientCluster implements JedisClient{
 	@Override
 	public Long ttl(String key) {
 		return jedisCluster.ttl(key);
+	}
+
+	@Override
+	public Long hdel(String key, String item) {
+		return jedisCluster.hdel(key, item);
 	}
 
 }

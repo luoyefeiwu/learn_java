@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import com.taotao.common.pojo.TaotaoResult;
 import com.taotao.common.utils.JsonUtils;
 import com.taotao.mapper.TbContentMapper;
 import com.taotao.pojo.TbContent;
@@ -63,6 +64,17 @@ public class ContentServiceImpl implements ContentService {
 			}
 		}
 		return list;
+	}
+
+	/* 
+	 * 同步redis
+	 * (non-Javadoc)
+	 * @see com.taotao.rest.service.ContentService#syncCOntent(java.lang.Long)
+	 */
+	@Override
+	public TaotaoResult syncContent(Long cid) {
+		jedisClient.hdel(REDIS_CONTENT_KEY, cid + "");
+		return TaotaoResult.ok();
 	}
 
 }

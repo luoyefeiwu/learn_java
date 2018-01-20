@@ -9,6 +9,7 @@ import redis.clients.jedis.JedisPool;
 
 /**
  * 单机版
+ * 
  * @author Jerry
  *
  */
@@ -81,4 +82,10 @@ public class JedisClientSingle implements JedisClient {
 		return result;
 	}
 
+	@Override
+	public Long hdel(String key, String item) {
+		Jedis jedis = jedisPool.getResource();
+		Long result = jedis.hdel(key, item);
+		return result;
+	}
 }
