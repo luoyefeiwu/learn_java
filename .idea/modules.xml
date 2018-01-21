@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/JDBCTest/JDBCTest.iml" filepath="$PROJECT_DIR$/JDBCTest/JDBCTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JDBC_CRUD/JDBC_CRUD.iml" filepath="$PROJECT_DIR$/JDBC_CRUD/JDBC_CRUD.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LearnSSM/LearnSSM.iml" filepath="$PROJECT_DIR$/LearnSSM/LearnSSM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Login/Login.iml" filepath="$PROJECT_DIR$/Login/Login.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MavenFirst/MavenFirst.iml" filepath="$PROJECT_DIR$/MavenFirst/MavenFirst.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MavenSecond/MavenSecond.iml" filepath="$PROJECT_DIR$/MavenSecond/MavenSecond.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SSHDemo/SSHDemo.iml" filepath="$PROJECT_DIR$/SSHDemo/SSHDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SSHDemo1/SSHDemo1.iml" filepath="$PROJECT_DIR$/SSHDemo1/SSHDemo1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SSHDemo2/SSHDemo2.iml" filepath="$PROJECT_DIR$/SSHDemo2/SSHDemo2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Shop/Shop.iml" filepath="$PROJECT_DIR$/Shop/Shop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo_user/demo_user.iml" filepath="$PROJECT_DIR$/demo_user/demo_user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ee19_crm/ee19_crm.iml" filepath="$PROJECT_DIR$/ee19_crm/ee19_crm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ee19_crmdb/ee19_crmdb.iml" filepath="$PROJECT_DIR$/ee19_crmdb/ee19_crmdb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/learnMybatisGenerator/learnMybatisGenerator.iml" filepath="$PROJECT_DIR$/learnMybatisGenerator/learnMybatisGenerator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/learnSpring/learnSpring.iml" filepath="$PROJECT_DIR$/learnSpring/learnSpring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/learnSpringMVCannotation/learnSpringMVCannotation.iml" filepath="$PROJECT_DIR$/learnSpringMVCannotation/learnSpringMVCannotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/servlet_demo/servlet_demo.iml" filepath="$PROJECT_DIR$/servlet_demo/servlet_demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springTest/springTest.iml" filepath="$PROJECT_DIR$/springTest/springTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sshTest/sshTest.iml" filepath="$PROJECT_DIR$/sshTest/sshTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sshweb/sshweb.iml" filepath="$PROJECT_DIR$/sshweb/sshweb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/struct2Test/struct2Test.iml" filepath="$PROJECT_DIR$/struct2Test/struct2Test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/taotao-common/taotao-common.iml" filepath="$PROJECT_DIR$/taotao-common/taotao-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/taotao-manager/taotao-manager.iml" filepath="$PROJECT_DIR$/taotao-manager/taotao-manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/taotao-manager/taotao-manager-mapper/taotao-manager-mapper.iml" filepath="$PROJECT_DIR$/taotao-manager/taotao-manager-mapper/taotao-manager-mapper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/taotao-manager/taotao-manager-pojo/taotao-manager-pojo.iml" filepath="$PROJECT_DIR$/taotao-manager/taotao-manager-pojo/taotao-manager-pojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/taotao-manager/taotao-manager-service/taotao-manager-service.iml" filepath="$PROJECT_DIR$/taotao-manager/taotao-manager-service/taotao-manager-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/taotao-manager/taotao-manager-web/taotao-manager-web.iml" filepath="$PROJECT_DIR$/taotao-manager/taotao-manager-web/taotao-manager-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/taotao-parent/taotao-parent.iml" filepath="$PROJECT_DIR$/taotao-parent/taotao-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/taotao-portal/taotao-portal.iml" filepath="$PROJECT_DIR$/taotao-portal/taotao-portal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/taotao-rest/taotao-rest.iml" filepath="$PROJECT_DIR$/taotao-rest/taotao-rest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/taotao-search/taotao-search.iml" filepath="$PROJECT_DIR$/taotao-search/taotao-search.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xml_dom4J/xml_dom4J.iml" filepath="$PROJECT_DIR$/xml_dom4J/xml_dom4J.iml" />
+    </modules>
+  </component>
+</project>
