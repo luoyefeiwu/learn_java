@@ -18,6 +18,7 @@ import com.taotao.common.pojo.TaotaoResult;
 import com.taotao.common.utils.ExceptionUtil;
 import com.taotao.sso.service.LoginService;
 import com.taotao.sso.service.RegisterService;
+import com.taotao.sso.service.TokenService;
 
 @Controller
 @RequestMapping("/user")
@@ -27,6 +28,9 @@ public class RegisterController {
 	private RegisterService registerService;
 	@Autowired
 	private LoginService loginService;
+
+	@Autowired
+	private TokenService tokenService;
 
 	@RequestMapping("/check/{param}/{type}")
 	@ResponseBody
@@ -55,10 +59,10 @@ public class RegisterController {
 
 	@RequestMapping("/token/{token}")
 	@ResponseBody
-	public Object getUserByToken(String token, String callback) {
+	public Object getUserByToken(@PathVariable String token, String callback) {
 
 		try {
-			TaotaoResult result = loginService.getUserByToken(token);
+			TaotaoResult result = tokenService.getUserByToken(token);
 			if (StringUtils.isNotBlank(callback)) {
 				MappingJacksonValue jacksonValue = new MappingJacksonValue(result);
 				jacksonValue.setJsonpFunction(callback);
@@ -67,9 +71,25 @@ public class RegisterController {
 			return result;
 		} catch (Exception e) {
 			e.printStackTrace();
-			return TaotaoResult.build(500,ExceptionUtil.getStackTrace(e));
+			return TaotaoResult.build(500, ExceptionUtil.getStackTrace(e));
 		}
-
 	}
 
+	@RequestMapping("/token/logout/{token}")
+	@ResponseBody
+	public Object logout(@PathVariable String token, String callback) {
+
+		try {
+			TaotaoResult result = tokenService.deleteUserToken(token);
+			if (StringUtils.isNotBlank(callback)) {
+				MappingJacksonValue jacksonValue = new MappingJacksonValue(result);
+				jacksonValue.setJsonpFunction(callback);
+				return jacksonValue;
+			}
+			return result;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return TaotaoResult.build(500, ExceptionUtil.getStackTrace(e));
+		}
+	}
 }

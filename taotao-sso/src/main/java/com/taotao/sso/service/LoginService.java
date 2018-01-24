@@ -15,12 +15,4 @@ public interface LoginService {
 	 * @return
 	 */
 	public TaotaoResult login(String username,String password,HttpServletRequest request,HttpServletResponse response);
-	
-	/**
-	 * 通过Token 得到用户信息
-	 * @param token
-	 * @return
-	 */
-	public TaotaoResult getUserByToken(String token);
-
 }
