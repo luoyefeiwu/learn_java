@@ -1,6 +1,7 @@
 package com.taotao.sso.service;
 
 import com.taotao.common.pojo.TaotaoResult;
+import com.taotao.pojo.TbUser;
 
 public interface RegisterService {
 
@@ -11,4 +12,10 @@ public interface RegisterService {
 	 * @return
 	 */
 	public TaotaoResult checkData(String param,int type);
+	/**
+	 * 注册
+	 * @param user
+	 * @return
+	 */
+	public TaotaoResult register(TbUser user);
 }

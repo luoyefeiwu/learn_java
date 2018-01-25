@@ -75,11 +75,11 @@
 				return true;
 			},
 			doLogin:function() {
-				$.post("/user/login", $("#formlogin").serialize(),function(data){
+				$.post("/login", $("#formlogin").serialize(),function(data){
 					if (data.status == 200) {
 						alert("登录成功！");
 						if (redirectUrl == "") {
-							location.href = "http://www.taotao.com";
+							location.href = "http://localhost:8082";
 						} else {
 							location.href = redirectUrl;
 						}

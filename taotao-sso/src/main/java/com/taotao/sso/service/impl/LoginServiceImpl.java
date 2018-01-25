@@ -32,8 +32,8 @@ public class LoginServiceImpl implements LoginService {
 
 	@Value("${REDIS_SESSION_KEY}")
 	private String REDIS_SESSION_KEY;
-	@Value("${SESSION_EXPIRE}")
-	private Integer SESSION_EXPIRE;
+	@Value("${REDIS_SESSION_EXPIRE}")
+	private Integer REDIS_SESSION_EXPIRE;
 
 	/*
 	 * 登陆 (non-Javadoc)
@@ -65,7 +65,7 @@ public class LoginServiceImpl implements LoginService {
 		user.setPassword(null);
 		jedisClient.set(REDIS_SESSION_KEY + ":" + token, JsonUtils.objectToJson(user));
 		// 设置过期时间
-		jedisClient.expire(REDIS_SESSION_KEY + ":" + token, SESSION_EXPIRE);
+		jedisClient.expire(REDIS_SESSION_KEY + ":" + token, REDIS_SESSION_EXPIRE);
 		// 写入cookie
 		CookieUtils.setCookie(request, response, "TT_TOKEN", token);
 		return TaotaoResult.ok(token);

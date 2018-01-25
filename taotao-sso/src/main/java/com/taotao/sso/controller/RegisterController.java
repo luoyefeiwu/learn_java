@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.taotao.common.pojo.TaotaoResult;
 import com.taotao.common.utils.ExceptionUtil;
+import com.taotao.pojo.TbUser;
 import com.taotao.sso.service.LoginService;
 import com.taotao.sso.service.RegisterService;
 import com.taotao.sso.service.TokenService;
@@ -43,37 +44,7 @@ public class RegisterController {
 		}
 		return result;
 	}
-
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	@ResponseBody
-	public TaotaoResult login(String username, String password, HttpServletResponse response,
-			HttpServletRequest request) {
-		try {
-			TaotaoResult result = loginService.login(username, password, request, response);
-			return result;
-		} catch (Exception e) {
-			e.printStackTrace();
-			return TaotaoResult.build(500, ExceptionUtil.getStackTrace(e));
-		}
-	}
-
-	@RequestMapping("/token/{token}")
-	@ResponseBody
-	public Object getUserByToken(@PathVariable String token, String callback) {
-
-		try {
-			TaotaoResult result = tokenService.getUserByToken(token);
-			if (StringUtils.isNotBlank(callback)) {
-				MappingJacksonValue jacksonValue = new MappingJacksonValue(result);
-				jacksonValue.setJsonpFunction(callback);
-				return jacksonValue;
-			}
-			return result;
-		} catch (Exception e) {
-			e.printStackTrace();
-			return TaotaoResult.build(500, ExceptionUtil.getStackTrace(e));
-		}
-	}
+	
 
 	@RequestMapping("/token/logout/{token}")
 	@ResponseBody

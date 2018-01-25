@@ -18,8 +18,8 @@ public class TokenServiceImpl implements TokenService {
 
 	@Value("${REDIS_SESSION_KEY}")
 	private String REDIS_SESSION_KEY;
-	@Value("${SESSION_EXPIRE}")
-	private Integer SESSION_EXPIRE;
+	@Value("${REDIS_SESSION_EXPIRE}")
+	private Integer REDIS_SESSION_EXPIRE;
 
 	/*
 	 * 通过Token得到用户信息 (non-Javadoc)
@@ -35,7 +35,7 @@ public class TokenServiceImpl implements TokenService {
 		}
 		TbUser user=JsonUtils.jsonToPojo(json, TbUser.class);
 		//更新session过期时间
-		jedisClient.expire(REDIS_SESSION_KEY + ":" + token,SESSION_EXPIRE);
+		jedisClient.expire(REDIS_SESSION_KEY + ":" + token,REDIS_SESSION_EXPIRE);
 		return TaotaoResult.ok(user);
 	}
 
