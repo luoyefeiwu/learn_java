@@ -35,7 +35,6 @@ public class RegisterController {
 		return result;
 	}
 	
-
 	@RequestMapping("/token/logout/{token}")
 	@ResponseBody
 	public Object logout(@PathVariable String token, String callback) {
@@ -52,5 +51,10 @@ public class RegisterController {
 			e.printStackTrace();
 			return TaotaoResult.build(500, ExceptionUtil.getStackTrace(e));
 		}
+	}
+	
+	private void Hello() {
+		System.out.println("测试");
+		
 	}
 }
