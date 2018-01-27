@@ -1,22 +1,15 @@
 package com.taotao.sso.controller;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.apache.commons.lang3.StringUtils;
-import org.apache.http.HttpRequest;
-import org.aspectj.apache.bcel.generic.ReturnaddressType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.converter.json.MappingJacksonValue;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.taotao.common.pojo.TaotaoResult;
 import com.taotao.common.utils.ExceptionUtil;
-import com.taotao.pojo.TbUser;
 import com.taotao.sso.service.LoginService;
 import com.taotao.sso.service.RegisterService;
 import com.taotao.sso.service.TokenService;
@@ -27,9 +20,6 @@ public class RegisterController {
 
 	@Autowired
 	private RegisterService registerService;
-	@Autowired
-	private LoginService loginService;
-
 	@Autowired
 	private TokenService tokenService;
 
