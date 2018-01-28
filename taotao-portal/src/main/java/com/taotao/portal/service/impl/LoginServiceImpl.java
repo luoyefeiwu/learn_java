@@ -8,9 +8,9 @@ import com.taotao.common.utils.HttpClientUtil;
 import com.taotao.pojo.TbUser;
 import com.taotao.portal.service.LoginService;
 @Service
-public class LoginServiceImpl implements LoginService{
+public class LoginServiceImpl {
 
-	@Value("${SSO_BASE_URL}")
+	/*@Value("${SSO_BASE_URL}")
 	public String SSO_BASE_URL;
 	@Value("${SSO_TOKEN_USER_URL}")
 	private String SSO_TOKEN_USER_URL;
@@ -34,6 +34,6 @@ public class LoginServiceImpl implements LoginService{
 			return null;
 		}
 		return null;
-	}
+	}*/
 
 }
